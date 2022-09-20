@@ -1,4 +1,4 @@
-#module nuget:?package=Cake.BuildSystems.Module&version=3.0.1
+#module nuget:?package=Cake.BuildSystems.Module&version=4.1.0
 #load "build/helpers.cake"
 #load "build/version.cake"
 #tool "nuget:https://api.nuget.org/v3/index.json?package=nuget.commandline&version=5.3.1"
@@ -65,7 +65,7 @@ Task("Restore")
 {
 	// Restore all NuGet packages.
 	Information("Restoring solution...");
-	DotNetCoreRestore(projects.SolutionPath);
+	DotNetRestore(projects.SolutionPath);
 });
 
 Task("Build")
@@ -76,11 +76,11 @@ Task("Build")
 	Information("Building solution...");
 	foreach (var project in projects.SourceProjectPaths) {
 		Information($"Building {project.GetDirectoryName()} for {configuration}");
-		var settings = new DotNetCoreBuildSettings {
+		var settings = new DotNetBuildSettings {
 			Configuration = configuration,
 			ArgumentCustomization = args => args.Append("/p:NoWarn=NU1701"),
 		};
-		DotNetCoreBuild(project.FullPath, settings);
+		DotNetBuild(project.FullPath, settings);
 	}
 
 });
@@ -91,7 +91,7 @@ Task("NuGet")
 {
     Information("Building NuGet package");
     CreateDirectory(artifacts + "package/");
-    var packSettings = new DotNetCorePackSettings {
+    var packSettings = new DotNetPackSettings {
         Configuration = configuration,
         NoBuild = true,
         OutputDirectory = $"{artifacts}package",
@@ -101,7 +101,7 @@ Task("NuGet")
     };
     foreach(var project in projects.SourceProjectPaths) {
         Information($"Packing {project.GetDirectoryName()}...");
-        DotNetCorePack(project.FullPath, packSettings);
+        DotNetPack(project.FullPath, packSettings);
     }
 });
 
