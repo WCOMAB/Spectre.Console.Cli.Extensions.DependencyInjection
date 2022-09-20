@@ -2,18 +2,23 @@
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
-    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <TargetFramework>net6.0</TargetFramework>
     <IsPackable>false</IsPackable>
     <Description>Demonstrates how to use the Spectre.Cli.Extensions.DependencyInjection package in a command-line app.</Description>
-    <LangVersion>8.0</LangVersion>
+    <LangVersion>10.0</LangVersion>
+    <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Using Include="samples" />
+  </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\src\Spectre.Cli.Extensions.DependencyInjection\Spectre.Cli.Extensions.DependencyInjection.csproj" />
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="3.1.9" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="6.0.0" />
   </ItemGroup>
 
 </Project>
