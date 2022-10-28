@@ -1,12 +1,15 @@
 # Spectre.Console.Cli.Extensions.DependencyInjection
 
+
+
+
 A type provider for the CLI component of [`Spectre.Console`](https://github.com/spectresystems/spectre.console)  using the [`Microsoft.Extensions.DependencyInjection`](https://www.nuget.org/packages/Microsoft.Extensions.DependencyInjection/) container.
 
-> This package was designed for `Spectre.Cli` which has now been merged into `Spectre.Console`.
+> This is a fork of [agc93/spectre.cli.extensions.dependencyinjection](https://github.com/agc93/spectre.cli.extensions.dependencyinjection) to support newer versions of Spectre.Console.Cli
 
 ## Getting started
 
-Once you've installed both `Spectre.Console` and this package, just change the call to `new CommandApp()` in your `Program.cs` to match the below:
+Once you've installed both `Spectre.Console.Cli` and this package, just change the call to `new CommandApp()` in your `Program.cs` to match the below:
 
 ```csharp
 var services = new ServiceCollection();
@@ -54,4 +57,4 @@ public class SomeCommand : Command<SomeCommand.Settings>
 }
 ```
 
-> For a more complex example, check out [git-profile-manager](https://github.com/agc93/git-profile-manager).
+> For a more complex example, check out [devlead/dpi](https://github.com/devlead/dpi).
