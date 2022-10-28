@@ -37,6 +37,7 @@ jobs:
         NUGET_TOKEN: ${{secrets.NUGET_TOKEN}}
       with:
         cake-version: tool-manifest
+        target: Release
 
     - uses: actions/upload-artifact@v3
       name: Upload Artifacts
