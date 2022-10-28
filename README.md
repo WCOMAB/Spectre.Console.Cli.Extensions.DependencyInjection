@@ -1,4 +1,4 @@
-# Spectre.Cli.Extensions.DependencyInjection
+# Spectre.Console.Cli.Extensions.DependencyInjection
 
 A type provider for the CLI component of [`Spectre.Console`](https://github.com/spectresystems/spectre.console)  using the [`Microsoft.Extensions.DependencyInjection`](https://www.nuget.org/packages/Microsoft.Extensions.DependencyInjection/) container.
 
