@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
+    <TargetFrameworks>netstandard2.0;net7.0</TargetFrameworks>
   </PropertyGroup>
   <PropertyGroup>
     <PackageId>Spectre.Cli.Extensions.DependencyInjection</PackageId>
@@ -14,7 +14,8 @@
     <PackageProjectUrl>https://github.com/agc93/spectre.cli.extensions.dependencyinjection</PackageProjectUrl>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="6.0.1" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="6.0.1" Condition="'$(TargetFramework)' != 'net7.0'" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="7.0.0-rc.2.22472.3" Condition="'$(TargetFramework)' == 'net7.0'" />
     <PackageReference Include="Spectre.Console.Cli" Version="0.45.0" />
   </ItemGroup>
 
