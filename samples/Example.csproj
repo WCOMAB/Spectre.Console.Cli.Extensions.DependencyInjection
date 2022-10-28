@@ -4,7 +4,7 @@
     <OutputType>Exe</OutputType>
     <TargetFramework>net6.0</TargetFramework>
     <IsPackable>false</IsPackable>
-    <Description>Demonstrates how to use the Spectre.Cli.Extensions.DependencyInjection package in a command-line app.</Description>
+    <Description>Demonstrates how to use the Spectre.Console.Cli.Extensions.DependencyInjection package in a command-line app.</Description>
     <LangVersion>10.0</LangVersion>
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
@@ -14,7 +14,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\src\Spectre.Cli.Extensions.DependencyInjection\Spectre.Cli.Extensions.DependencyInjection.csproj" />
+    <ProjectReference Include="..\src\Spectre.Console.Cli.Extensions.DependencyInjection\Spectre.Console.Cli.Extensions.DependencyInjection.csproj" />
   </ItemGroup>
 
   <ItemGroup>
