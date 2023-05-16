@@ -14,7 +14,7 @@ Once you've installed both `Spectre.Console.Cli` and this package, just change t
 ```csharp
 var services = new ServiceCollection();
 // add extra services to the container here
-using registrar = new DependencyInjectionRegistrar(services);
+using var registrar = new DependencyInjectionRegistrar(services);
 var app = new CommandApp(registrar);
 app.Configure(config =>
 {
