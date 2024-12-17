@@ -1,4 +1,4 @@
-#module nuget:?package=Cake.BuildSystems.Module&version=5.0.0
+#module nuget:?package=Cake.BuildSystems.Module&version=7.1.0
 #load "build/helpers.cake"
 #load "build/version.cake"
 #tool "nuget:https://api.nuget.org/v3/index.json?package=nuget.commandline&version=5.3.1"
@@ -17,7 +17,7 @@ var configuration = Argument("configuration", "Release");
 
 var projects = GetProjects(File("./src/Spectre.Console.Cli.Extensions.DependencyInjection.sln"), configuration);
 var artifacts = "./dist/";
-var frameworks = new List<string> { "netstandard2.0" };
+var frameworks = new List<string> { "netstandard2.0", "net8.0", "net9.0" };
 var packageVersion = string.Empty;
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -125,7 +125,7 @@ Task("Publish-NuGet-Package")
 .IsDependentOn("NuGet")
 .WithCriteria(() => HasEnvironmentVariable("NUGET_TOKEN"))
 .WithCriteria(() => HasEnvironmentVariable("GITHUB_REF"))
-.WithCriteria(() => EnvironmentVariable("GITHUB_REF").StartsWith("refs/tags/v") || EnvironmentVariable("GITHUB_REF") == "refs/heads/main")
+.WithCriteria(() => EnvironmentVariable("GITHUB_REF").StartsWith("refs/tags/v"))
 .Does(() => {
     var nugetToken = EnvironmentVariable("NUGET_TOKEN");
     var pkgFiles = GetFiles($"{artifacts}package/*.nupkg");

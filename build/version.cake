@@ -1,5 +1,5 @@
-#tool dotnet:?package=minver-cli&version=4.3.0
-#addin nuget:?package=Cake.MinVer&version=3.0.0
+#tool dotnet:?package=minver-cli&version=6.0.0
+#addin nuget:?package=Cake.MinVer&version=4.0.0
 
 var fallbackVersion = Argument<string>("force-version", EnvironmentVariable("FALLBACK_VERSION") ?? "0.1.0");
 

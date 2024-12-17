@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFrameworks>netstandard2.0;net7.0;net8.0</TargetFrameworks>
+    <TargetFrameworks>netstandard2.0;net9.0;net8.0</TargetFrameworks>
   </PropertyGroup>
   <PropertyGroup>
     <PackageId>Spectre.Console.Cli.Extensions.DependencyInjection</PackageId>
@@ -14,10 +14,10 @@
     <PackageProjectUrl>https://github.com/wcomab/Spectre.Console.Cli.Extensions.DependencyInjection</PackageProjectUrl>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="6.0.1" Condition="'$(TargetFramework)' != 'net7.0' AND '$(TargetFramework)' != 'net8.0'" />
-    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="7.0.0" Condition="'$(TargetFramework)' == 'net7.0'" />
-    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="8.0.0-rc.2.23479.6" Condition="'$(TargetFramework)' == 'net8.0'" />
-    <PackageReference Include="Spectre.Console.Cli" Version="0.47.0" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="8.0.1" Condition="'$(TargetFramework)' == 'netstandard2.0'" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="9.0.0" Condition="'$(TargetFramework)' == 'net9.0'" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="8.0.1" Condition="'$(TargetFramework)' == 'net8.0'" />
+    <PackageReference Include="Spectre.Console.Cli" Version="0.49.1" />
   </ItemGroup>
 
 </Project>
