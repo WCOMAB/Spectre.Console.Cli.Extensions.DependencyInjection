@@ -1,7 +1,7 @@
 #module nuget:?package=Cake.BuildSystems.Module&version=7.1.0
 #load "build/helpers.cake"
 #load "build/version.cake"
-#tool "nuget:https://api.nuget.org/v3/index.json?package=nuget.commandline&version=5.3.1"
+#tool "nuget:https://api.nuget.org/v3/index.json?package=nuget.commandline&version=5.11.6"
 
 
 ///////////////////////////////////////////////////////////////////////////////
