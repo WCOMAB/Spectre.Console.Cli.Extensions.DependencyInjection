@@ -1,7 +1,6 @@
 #module nuget:?package=Cake.BuildSystems.Module&version=7.1.0
 #load "build/helpers.cake"
 #load "build/version.cake"
-#tool "nuget:https://api.nuget.org/v3/index.json?package=nuget.commandline&version=6.12.2"
 
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -130,10 +129,16 @@ Task("Publish-NuGet-Package")
     var nugetToken = EnvironmentVariable("NUGET_TOKEN");
     var pkgFiles = GetFiles($"{artifacts}package/*.nupkg");
 	Information($"Pushing {pkgFiles.Count} package files!");
-    NuGetPush(pkgFiles, new NuGetPushSettings {
-      Source = "https://api.nuget.org/v3/index.json",
-      ApiKey = nugetToken
-    });
+    foreach(var pkgFile in pkgFiles)
+	{
+		Information($"Pushing {pkgFile}...");
+        DotNetNuGetPush(
+            pkgFile,
+            new DotNetNuGetPushSettings {
+                Source = "https://api.nuget.org/v3/index.json",
+                ApiKey = nugetToken
+            });
+    }
 });
 
 Task("Release")
