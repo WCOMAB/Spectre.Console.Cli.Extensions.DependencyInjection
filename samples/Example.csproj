@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
-    <TargetFramework>net8.0</TargetFramework>
+    <TargetFramework>net9.0</TargetFramework>
     <IsPackable>false</IsPackable>
     <Description>Demonstrates how to use the Spectre.Console.Cli.Extensions.DependencyInjection package in a command-line app.</Description>
     <LangVersion>12.0</LangVersion>
