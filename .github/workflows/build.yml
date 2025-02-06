@@ -31,7 +31,7 @@ jobs:
           global-json-file: global.json
 
     - name: Run Cake script
-      uses: cake-build/cake-action@5167c3f6a9e15c76f009de2acdfb9488552bc0b9
+      uses: cake-build/cake-action@v3
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         NUGET_TOKEN: ${{secrets.NUGET_TOKEN}}
