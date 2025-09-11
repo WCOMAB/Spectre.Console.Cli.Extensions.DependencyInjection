@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFrameworks>netstandard2.0;net9.0;net8.0</TargetFrameworks>
+    <TargetFrameworks>netstandard2.0;net10.0;net9.0;net8.0</TargetFrameworks>
     <PackageId>Spectre.Console.Cli.Extensions.DependencyInjection</PackageId>
     <Authors>achapman,devlead,wcomab</Authors>
     <Copyright>© Alistair Chapman 2018</Copyright>
@@ -19,6 +19,7 @@
     <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="8.0.1" Condition="'$(TargetFramework)' == 'netstandard2.0'" />
     <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="8.0.1" Condition="'$(TargetFramework)' == 'net8.0'" />
     <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="9.0.9" Condition="'$(TargetFramework)' == 'net9.0'" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="10.0.0-rc.1.25451.107" Condition="'$(TargetFramework)' == 'net10.0'" />
     <PackageReference Include="Spectre.Console.Cli" Version="0.51.1" />
   </ItemGroup>
 
