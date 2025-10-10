@@ -15,6 +15,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     permissions:
+      contents: write
       id-token: write  # enable GitHub OIDC token issuance for this job
 
     steps:
