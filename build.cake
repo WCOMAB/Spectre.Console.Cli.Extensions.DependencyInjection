@@ -1,4 +1,4 @@
-#module nuget:?package=Cake.BuildSystems.Module&version=8.0.0
+#module nuget:?package=Cake.BuildSystems.Module&version=9.0.0
 #load "build/helpers.cake"
 #load "build/version.cake"
 
