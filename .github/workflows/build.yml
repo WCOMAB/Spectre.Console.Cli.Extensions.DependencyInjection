@@ -52,6 +52,7 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         NUGET_TOKEN: ${{steps.login.outputs.NUGET_API_KEY}}
       with:
+        file-path: cake.cs
         cake-version: tool-manifest
         target: Release
 
