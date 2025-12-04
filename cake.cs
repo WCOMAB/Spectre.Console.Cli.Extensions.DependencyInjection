@@ -1,6 +1,7 @@
-#module nuget:?package=Cake.BuildSystems.Module&version=8.0.0
-#load "build/helpers.cake"
-#load "build/version.cake"
+#:sdk Cake.Sdk@6.0.0
+#:package Cake.BuildSystems.Module@9.0.0
+#:package Cake.MinVer@4.0.0
+#:property IncludeAdditionalFiles=./build/*.cs
 
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -25,6 +26,8 @@ var packageVersion = string.Empty;
 
 Setup(ctx =>
 {
+	InstallTool("dotnet:?package=minver-cli&version=6.0.0");
+
 	// Executed BEFORE the first task.
 	Information("Running tasks...");
 	CreateDirectory(artifacts);
