@@ -1,6 +1,6 @@
 public static partial class Program
 {
-    private static string? fallbackVersion = Argument<string?>("force-version", EnvironmentVariable("FALLBACK_VERSION") ?? "0.1.0");
+    private static string fallbackVersion = Argument<string?>("force-version", EnvironmentVariable("FALLBACK_VERSION") ?? "0.1.0");
 
     static string BuildVersion(string fallbackVersion) {
         var PackageVersion = string.Empty;

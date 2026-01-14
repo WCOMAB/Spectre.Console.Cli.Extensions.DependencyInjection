@@ -20,21 +20,22 @@ public static partial class Program
         var solution = ParseSolution(slnPath);
         var projects = solution.Projects.Where(p => p.Type != "{2150E333-8FDC-42A3-9474-1A3956D46DE8}");
         var testAssemblies = projects.Where(p => p.Name.Contains(".Tests")).Select(p => p.Path.GetDirectory() + "/bin/" + configuration + "/" + p.Name + ".dll");
-        return new ProjectCollection {
-            SolutionPath = slnPath,
-            SourceProjects = projects.Where(p => !p.Name.Contains(".Tests")),
-            TestProjects = projects.Where(p => p.Name.Contains(".Tests"))
-        };
+        return new ProjectCollection(
+            SolutionPath: slnPath,
+            SourceProjects: projects.Where(p => !p.Name.Contains(".Tests")),
+            TestProjects: projects.Where(p => p.Name.Contains(".Tests"))
+        );
         
     }
 }
 
-public class ProjectCollection {
-    public ConvertableFilePath SolutionPath { get; set;}
-    public IEnumerable<SolutionProject> SourceProjects { get; set;}
-    public IEnumerable<DirectoryPath> SourceProjectPaths {get { return SourceProjects.Select(p => p.Path.GetDirectory()); } } 
-    public IEnumerable<SolutionProject> TestProjects {get;set;}
-    public IEnumerable<DirectoryPath> TestProjectPaths { get { return TestProjects.Select(p => p.Path.GetDirectory()); } }
-    public IEnumerable<SolutionProject> AllProjects { get { return SourceProjects.Concat(TestProjects); } }
-    public IEnumerable<DirectoryPath> AllProjectPaths { get { return AllProjects.Select(p => p.Path.GetDirectory()); } }
+public record ProjectCollection(
+    ConvertableFilePath SolutionPath,
+    IEnumerable<SolutionProject> SourceProjects,
+    IEnumerable<SolutionProject> TestProjects)
+{
+    public ICollection<DirectoryPath> SourceProjectPaths => field ??= [.. SourceProjects.Select(p => p.Path.GetDirectory())];
+    public ICollection<DirectoryPath> TestProjectPaths => field ??= [.. TestProjects.Select(p => p.Path.GetDirectory())];
+    public ICollection<SolutionProject> AllProjects => field ??= [.. SourceProjects.Concat(TestProjects)];
+    public ICollection<DirectoryPath> AllProjectPaths => field ??= [.. AllProjects.Select(p => p.Path.GetDirectory())];
 }
