@@ -56,7 +56,7 @@ jobs:
         cake-version: tool-manifest
         target: Release
 
-    - uses: actions/upload-artifact@v6
+    - uses: actions/upload-artifact@v7
       name: Upload Artifacts
       with:
         name: scedi-package
