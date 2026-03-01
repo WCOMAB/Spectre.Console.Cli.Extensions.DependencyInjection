@@ -1,4 +1,4 @@
-#:sdk Cake.Sdk@6.0.0
+#:sdk Cake.Sdk@6.1.0
 #:package Cake.BuildSystems.Module@9.0.0
 #:package Cake.MinVer@4.0.0
 #:property IncludeAdditionalFiles=./build/*.cs
