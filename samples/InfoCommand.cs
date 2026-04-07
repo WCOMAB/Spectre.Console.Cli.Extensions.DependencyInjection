@@ -1,4 +1,4 @@
-using System;
+using System.Threading;
 using Spectre.Console.Cli;
 
 namespace samples
@@ -11,7 +11,7 @@ namespace samples
         {
             _greetingService = greetingService;
         }
-        public override int Execute(CommandContext context, Settings settings)
+        protected override int Execute(CommandContext context, Settings settings, CancellationToken cancellationToken)
         {
             _greetingService.Greet("World");
             return 0;
