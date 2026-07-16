@@ -25,17 +25,17 @@ jobs:
         fetch-depth: 0
 
     - name: Install .NET Core SDK 8.0.x
-      uses: actions/setup-dotnet@v5
+      uses: actions/setup-dotnet@v6
       with:
         dotnet-version: '8.0.x'
 
     - name: Install .NET Core SDK 9.0.x
-      uses: actions/setup-dotnet@v5
+      uses: actions/setup-dotnet@v6
       with:
         dotnet-version: '9.0.x'
 
     - name: Install .NET SDK (global.json)
-      uses: actions/setup-dotnet@v5
+      uses: actions/setup-dotnet@v6
       with:
           global-json-file: global.json
 
