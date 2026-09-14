@@ -27,12 +27,12 @@ jobs:
     - name: Install .NET Core SDK 8.0.x
       uses: actions/setup-dotnet@v6
       with:
-        dotnet-version: '8.0.x'
+        dotnet-version: '10.0.401'
 
     - name: Install .NET Core SDK 9.0.x
       uses: actions/setup-dotnet@v6
       with:
-        dotnet-version: '9.0.x'
+        dotnet-version: '10.0.401'
 
     - name: Install .NET SDK (global.json)
       uses: actions/setup-dotnet@v6
