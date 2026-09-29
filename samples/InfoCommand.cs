@@ -11,7 +11,7 @@ namespace samples
         {
             _greetingService = greetingService;
         }
-        protected override int Execute(CommandContext context, Settings settings, CancellationToken cancellationToken)
+        public override int Execute(CommandContext context, Settings settings, CancellationToken cancellationToken)
         {
             _greetingService.Greet("World");
             return 0;
