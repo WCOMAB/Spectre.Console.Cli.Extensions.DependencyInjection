@@ -1,4 +1,4 @@
-#:sdk Cake.Sdk@6.3.0
+#:sdk Cake.Sdk@7.0.0
 #:package Cake.BuildSystems.Module@9.0.0
 #:package Cake.MinVer@4.0.0
 #:property IncludeAdditionalFiles=./build/*.cs
@@ -17,7 +17,7 @@ var configuration = Argument("configuration", "Release");
 
 var projects = GetProjects(File("./src/Spectre.Console.Cli.Extensions.DependencyInjection.sln"), configuration);
 var artifacts = "./dist/";
-var frameworks = new List<string> { "netstandard2.0", "net8.0", "net9.0" };
+var frameworks = new List<string> { "netstandard2.0", "net10.0", "net11.0" };
 var packageVersion = string.Empty;
 
 ///////////////////////////////////////////////////////////////////////////////
