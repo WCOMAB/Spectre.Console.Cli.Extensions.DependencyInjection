@@ -43,7 +43,7 @@ jobs:
         user: ${{secrets.NUGET_USER}}
 
     - name: Run Cake script
-      uses: cake-build/cake-action@v3
+      uses: cake-build/cake-action@v4
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         NUGET_TOKEN: ${{steps.login.outputs.NUGET_API_KEY}}
